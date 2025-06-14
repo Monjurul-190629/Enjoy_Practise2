@@ -4,6 +4,8 @@ import Home from '../Pages/Home';
 import About from '../Pages/About/About';
 import MainLayout from '../Layout/MainLayout';
 import Contact from '../Pages/Contact/Contact';
+import User from '../Pages/User/User';
+import Editor from '@/Pages/Editor/Editor';
 
 const AppRoutes:React.FC = () => {
     return (
@@ -13,6 +15,8 @@ const AppRoutes:React.FC = () => {
                    <Route index element = {<Home/>}/>
                    <Route path = "about" element={<About/>} />
                    <Route path = "contact" element={<Contact/>} />
+                   <Route path = "user" element = {<User/>} />
+                   <Route path = "/editor" element = {<Editor/>} />
                 </Route>
             </Routes>
         </div>
