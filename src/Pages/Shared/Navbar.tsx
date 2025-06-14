@@ -21,9 +21,15 @@ const Navbar: React.FC = () => {
             <Link to="/user">User</Link>
         </li>
         <li>
+            <Link to = "/editor">Editor</Link>
+        </li>
+        <li>
             <button onClick={() => toggleTheme()} className='py-1'>
                 {theme === 'light' ? <Sun/> : <SunMoon/>}
             </button>
+        </li>
+        <li>
+            <Link to = "/registration">Registration</Link>
         </li>
     </>
 
