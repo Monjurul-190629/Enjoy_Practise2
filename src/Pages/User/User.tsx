@@ -3,6 +3,7 @@ import { useUsers } from '../../hooks/useUsers';
 import { useUserStore } from '../../store/useUserStore';
 import { useUpdateAnother } from '../../store/useUpdateAnother';
 import { Button } from "@/Components/ui/button"
+import MyTable from '@/Components/Table/MyTable';
 
 const User: React.FC = () => {
     const { data: users, isLoading, isError } = useUsers();
@@ -52,6 +53,9 @@ const User: React.FC = () => {
             </div>
             
             <Button className='border-2 border-gray-400'>Hello</Button>
+
+            <h2 className="font-bold text-2xl underline text-center">User Table : </h2>
+            <MyTable/>
 
         </div>
     );
