@@ -1,7 +1,10 @@
 // components/UserForm.tsx
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { userSchema, type userSchema as UserSchema } from "../../Shcemas/userSchema";
+import {
+  userSchema,
+  type userSchema as UserSchema,
+} from "../../Shcemas/userSchema";
 import { useState } from "react";
 
 export default function UserForm() {
@@ -11,7 +14,6 @@ export default function UserForm() {
     register,
     handleSubmit,
     setValue,
-    watch,
     formState: { errors },
   } = useForm<UserSchema>({
     resolver: zodResolver(userSchema),
@@ -53,7 +55,9 @@ export default function UserForm() {
           placeholder="Your name"
           className="w-full border p-2 rounded"
         />
-        {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>}
+        {errors.name && (
+          <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
+        )}
       </div>
 
       {/* Email Field */}
@@ -67,7 +71,9 @@ export default function UserForm() {
           placeholder="Email address"
           className="w-full border p-2 rounded"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
+        )}
       </div>
 
       {/* Password Field */}
@@ -82,7 +88,9 @@ export default function UserForm() {
           placeholder="Password"
           className="w-full border p-2 rounded"
         />
-        {errors.password && <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>}
+        {errors.password && (
+          <p className="text-red-500 text-sm mt-1">{errors.password.message}</p>
+        )}
       </div>
 
       {/* Phone Field */}
@@ -96,7 +104,9 @@ export default function UserForm() {
           placeholder="+8801XXXXXXXXX"
           className="w-full border p-2 rounded"
         />
-        {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>}
+        {errors.phone && (
+          <p className="text-red-500 text-sm mt-1">{errors.phone.message}</p>
+        )}
       </div>
 
       {/* Image Upload */}
@@ -111,14 +121,22 @@ export default function UserForm() {
           onChange={handleImageChange}
           className="w-full border p-2 rounded"
         />
-        {errors.image && <p className="text-red-500 text-sm mt-1">{errors.image.message}</p>}
+        {errors.image && (
+          <p className="text-red-500 text-sm mt-1">
+            {errors.image.message as string}
+          </p>
+        )}
       </div>
 
       {/* Image Preview */}
       {imagePreview && (
         <div>
           <p className="font-medium mb-1">Image Preview:</p>
-          <img src={imagePreview} alt="Preview" className="w-32 h-32 object-cover rounded border" />
+          <img
+            src={imagePreview}
+            alt="Preview"
+            className="w-32 h-32 object-cover rounded border"
+          />
         </div>
       )}
 
